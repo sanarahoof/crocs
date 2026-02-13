@@ -1,0 +1,5 @@
+/*! @version pwa-studio: 0.0.1, @magento/venia-ui: ~11.7.0, @magento/upward-security-headers: ~1.1.18, @magento/pwa-theme-venia: ~2.4.0, @magento/pwa-buildpack: ~11.5.3, @magento/peregrine: ~15.5.2, @magento/pagebuilder: ~9.3.5, @magento/experience-platform-connector: ~1.0.10, @magento/eslint-config: ~1.5.0, @magento/babel-preset-peregrine: ~1.3.3, @apollo/client: ~3.5.0 */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{"7O3U":function(n,o,t){"use strict"
+t.r(o)
+var u=t("U9Rd")
+t.d(o,"default",function(){return u.a})}}])

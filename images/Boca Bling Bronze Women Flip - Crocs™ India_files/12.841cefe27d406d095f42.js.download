@@ -1,0 +1,8 @@
+/*! @version pwa-studio: 0.0.1, @magento/venia-ui: ~11.7.0, @magento/upward-security-headers: ~1.1.18, @magento/pwa-theme-venia: ~2.4.0, @magento/pwa-buildpack: ~11.5.3, @magento/peregrine: ~15.5.2, @magento/pagebuilder: ~9.3.5, @magento/experience-platform-connector: ~1.0.10, @magento/eslint-config: ~1.5.0, @magento/babel-preset-peregrine: ~1.3.3, @apollo/client: ~3.5.0 */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{t1Bi:function(e,t,a){"use strict"
+a.r(t),a.d(t,"default",function(){return n.a}),a.d(t,"ProductOptionsShimmer",function(){return d})
+var n=a("tSN9"),r=a("q1tI"),c=a.n(r),l=a("zrp3"),i=a("y1Xp"),s=a("q4KX"),o=a("17x9"),u=a("MtYM"),m=function TileListShimmer(e){var t=Object(i.a)(u.a,e.classes),a=Object(r.useMemo)(function(){return Array.from({length:3}).fill(null).map(function(e,t){return c.a.createElement(l.a,{width:3,height:3,key:"tile-".concat(t)})})},[])
+return c.a.createElement("div",{className:t.root},a)}
+m.defaultProps={classes:{}},m.propTypes={classes:Object(o.shape)({root:o.string})}
+var p=m,f=function OptionShimmer(e){var t=Object(i.a)(s.a,e.classes)
+return c.a.createElement("div",{className:t.root},c.a.createElement("h3",{className:t.title},c.a.createElement("span",null,c.a.createElement(l.a,{width:"100%"}))),c.a.createElement(p,null),c.a.createElement("div",{className:t.selection},c.a.createElement(l.a,{width:"100%"})))},d=function(){return c.a.createElement(r.Fragment,null,Array.from({length:2}).fill(null).map(function(e,t){return c.a.createElement(f,{key:"product-option-".concat(t)})}))}}}])

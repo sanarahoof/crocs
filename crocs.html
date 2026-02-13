@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crocs Women</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top bar */
+        .top-bar {
+            background: black;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        /* Sub offer */
+        .sub-offer {
+            background: #f7f7f0;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .sub-offer a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: black;
+        }
+
+        /* Horizontal scroll container */
+        .category-scroll {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        /* Scrollbar (optional) */
+        .category-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .category-scroll::-webkit-scrollbar-thumb {
+            background: #000;
+            border-radius: 10px;
+        }
+
+        /* Category cards */
+        .category-card {
+            min-width: 280px; /* IMPORTANT: keeps single line */
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-card p {
+            padding: 10px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+        /* Filter buttons */
+.filter-btn {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Product card */
+.product-card {
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Badge */
+.badge-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0070c9;
+}
+
+.badge-tag.bestseller {
+    color: #0056a3;
+}
+
+/* Wishlist */
+.wishlist {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Image */
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #f9f9f9;
+}
+
+/* Product info */
+.product-info {
+    padding: 12px;
+}
+
+.rating {
+    font-size: 14px;
+}
+
+.rating span {
+    color: #777;
+    font-size: 12px;
+}
+
+.colors {
+    font-size: 13px;
+    color: #666;
+}
+
+.product-info h6 {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Offer bar */
+.offer {
+    background: #d9ecff;
+    text-align: center;
+    font-size: 13px;
+    padding: 6px;
+}
+
+.crocs-info {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.info-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.count {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.view-more {
+    padding: 10px 30px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.desc {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.feature-box i {
+    font-size: 40px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.feature-box h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+}.footer {
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Top */
+.footer-top {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.footer-top button {
+    margin-top: 10px;
+    padding: 8px 25px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Middle */
+.footer-middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #333;
+    flex-wrap: wrap;
+}
+
+.footer-middle i {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Main content */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    padding: 40px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-col a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-col p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* Right wide column */
+.footer-col.wide {
+    grid-column: span 2;
+}
+
+.signup {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.terms {
+    display: block;
+    margin-top: 5px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-col.wide {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-middle {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* ===== HEADER ICONS ===== */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-icons i {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Search box */
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #bbb;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 120px;
+    font-size: 14px;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- Top Offer Bar -->
+<div class="top-bar text-center text-white">
+    SIGN UP FOR 15% OFF
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white border-bottom">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-2" href="#">crocs™</a>
+
+        <!-- Mobile toggle -->
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu + Icons -->
+        <div class="collapse navbar-collapse" id="menu">
+
+            <!-- Navigation links -->
+            <ul class="navbar-nav ms-4 me-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Kids</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Bestsellers</a></li>
+                <li class="nav-item">
+                    <a class="nav-link text-success fw-bold" href="#">Sale</a>
+                </li>
+            </ul>
+
+            <!-- Header Icons -->
+            <div class="header-icons">
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+</svg>
+                </div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>                
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+</svg>                
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bag-heart-fill" viewBox="0 0 16 16">
+  <path d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+</svg>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- Sub Offer -->
+<div class="sub-offer text-center">
+    Up To 50% Off + Extra 5% Off on Prepaid Orders <a href="#">Shop Now</a>
+</div>
+
+<!-- Breadcrumb -->
+<div class="container mt-4">
+    <a href="#" class="text-decoration-none">Back</a> | <span>Women</span>
+    <h2 class="mt-2 fw-bold">Women</h2>
+</div>
+
+<!-- SINGLE LINE CATEGORY CARDS -->
+<div class="container mt-4">
+    <div class="category-scroll">
+
+        <div class="category-card">
+            <img src="images/widget-may-Brooklyn1.webp" alt="">
+            <p>Women's Sandals</p>
+        </div>
+
+        <div class="category-card">
+            <img src="images/WIDGET-GETAWAY_1.webp" alt="">
+            <p>New Arrivals</p>
+        </div>
+
+        <div class="category-card">
+            <img src="images/Sale_1.webp" alt="">
+            <p>Platform</p>
+        </div>
+
+        <div class="category-card">
+            <img src="images/Clogs_1.webp" alt="">
+            <p>Clogs</p>
+        </div>
+
+        <div class="category-card">
+            <img src="images/Platforms.webp" alt="">
+            <p>Women's Sale</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="d-flex gap-2 flex-wrap">
+            <button class="filter-btn">Gender</button>
+            <button class="filter-btn">Style</button>
+            <button class="filter-btn">Size (India/UK)</button>
+            <button class="filter-btn">Color</button>
+            <button class="filter-btn">Price</button>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-muted">394 items</span>
+            <button class="filter-btn">Sort by <b>Just for You</b></button>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCT GRID -->
+<div class="container mt-4">
+    <div class="row g-4">
+
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag">NEW</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/213316_001_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>145 Reviews</span></div>
+                    <div class="colors">4 colors</div>
+                    <h6>Women's Miami Thong Flip</h6>
+                    <div class="price">₹3,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag">NEW</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/210834_0lh_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>270 Reviews</span></div>
+                    <div class="colors">5 colors</div>
+                    <h6>Women's Miami Toe Loop Sandal</h6>
+                    <div class="price">₹3,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/206453_2el_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/209862_0wv_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>1487 Reviews</span></div>
+                    <div class="colors">5 colors</div>
+                    <h6>Classic Platform Clog</h6>
+                    <div class="price">₹5,495</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/206750_2y2_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/209978_001_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/209793_2jj_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images\209862_001_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/209793_0wv_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images\206453_07h_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images\209916_854_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+        
+        <!-- PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <span class="badge-tag bestseller">BESTSELLER</span>
+                <span class="wishlist">♡</span>
+
+                <img src="images/209410_6ur_alt100.webp" alt="">
+
+                <div class="product-info">
+                    <div class="rating">★★★★☆ <span>3019 Reviews</span></div>
+                    <div class="colors">2 colors</div>
+                    <h6>Brooklyn Low Wedge</h6>
+                    <div class="price">₹5,995</div>
+                </div>
+
+                <div class="offer">Extra 10% Off | Use Code: PREPAID10</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<section class="crocs-info">
+    <div class="container">
+
+        <!-- Top text -->
+        <div class="info-header">
+            <p class="count">Showing 36 of 404 Products</p>
+            <button class="view-more">VIEW MORE</button>
+        </div>
+
+        <h2 class="title">CROCS WOMEN SHOES</h2>
+
+        <p class="desc">
+            Are you caught up most days, with a long to-do list? Wear the unique
+            <em>Crocs for Women</em> collection and be comfortable all day long.
+            If you are today’s woman, you need to walk like one.
+            Wear <strong>Crocs Women Shoes</strong> and make a style statement.
+            Select from an array of Clogs, Flip flops, Sandals, Flats, Loafers,
+            Shoes, Sneakers or Boots. Crocs offer both comfort and convenience at the same time.
+        </p>
+
+        <p class="desc">
+            Shop online to buy a pair of comfortable <strong>Crocs Women Shoes</strong>
+            from the official online store. Grab the dynamic ladies footwear with
+            the right size and colour, from among a variety of innovative and inspiring designs.
+            Also, choose your Crocs as per the occasion and preferable climatic
+            conditions to keep you comfortable all day.
+        </p>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+  <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+</svg>
+                <h5>Free Shipping</h5>
+                <p>Free shipping on all orders</p>
+            </div>
+
+            <div class="feature-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+</svg>
+                <h5>Easy Returns</h5>
+                <p>Change your mind? No problem. Our free returns process makes it easy.</p>
+            </div>
+
+            <div class="feature-box">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+  <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+</svg>                <h5>Crocs Guarantee</h5>
+                <p>Crocs™ products are covered by a 90-day warranty</p>
+            </div>
+
+            <div class="feature-box">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-lock2" viewBox="0 0 16 16">
+  <path d="M8 5a1 1 0 0 1 1 1v1H7V6a1 1 0 0 1 1-1m2 2.076V6a2 2 0 1 0-4 0v1.076c-.54.166-1 .597-1 1.224v2.4c0 .816.781 1.3 1.5 1.3h3c.719 0 1.5-.484 1.5-1.3V8.3c0-.627-.46-1.058-1-1.224"/>
+  <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"/>
+</svg>                <h5>Your Information is Secure</h5>
+                <p>100% secured transaction using SSL encrypted connection.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+
+    <!-- Top feedback bar -->
+    <div class="footer-top">
+        <p>We’d love to hear from you!</p>
+        <button>Leave feedback</button>
+    </div>
+
+    <!-- Middle bar -->
+    <div class="footer-middle">
+        <div class="left">
+            <i class="bi bi-geo-alt"></i> Store Locator
+        </div>
+
+        <div class="center">
+            🇮🇳 India
+        </div>
+
+        <div class="right">
+            ✓ Stay connected:
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-x"></i>
+        </div>
+    </div>
+
+    <!-- Main footer -->
+    <div class="footer-content">
+
+        <div class="footer-col">
+            <h4>My Account</h4>
+            <a href="#">Sign in/Register</a>
+            <a href="#">Order Status</a>
+            <a href="#">Returns</a>
+            <a href="#">Customer Service</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="#">Women</a>
+            <a href="#">Men</a>
+            <a href="#">Little Kids Ages 1-5</a>
+            <a href="#">Big Kids Ages 5+</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Help</h4>
+            <a href="#">FAQs</a>
+            <a href="#">Delivery Acceptance Policy</a>
+            <a href="#">Return Policy</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Size Chart</a>
+            <a href="#">Caring for your Crocs</a>
+            <a href="#">Crocs Creative Contest</a>
+            <a href="#">GST Update</a>
+            <a href="#">Offer Details</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About CROCS</a>
+            <a href="#">Compliance Information</a>
+        </div>
+
+        <div class="footer-col wide">
+            <p><strong>For online order & delivery related queries</strong></p>
+            <p><strong>Customer Service Email:</strong> support-in@crocs.in</p>
+            <p><strong>Toll-Free Customer Service Number:</strong> 000-800-919-1686 (Use "000" while dialing)</p>
+            <p><strong>Monday - Saturday:</strong> 9:00 AM - 7:00 PM IST</p>
+
+            <br>
+
+            <p>
+                Get the latest scoop on new arrivals, sales, special offers and
+                receive 15% off on your first order.
+            </p>
+
+            <a href="#" class="signup">SIGN UP NOW</a>
+            <a href="#" class="terms">SIGN UP – Terms & Conditions</a>
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

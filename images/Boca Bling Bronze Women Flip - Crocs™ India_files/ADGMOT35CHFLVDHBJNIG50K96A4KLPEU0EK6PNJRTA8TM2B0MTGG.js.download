@@ -1,0 +1,1 @@
+var configuration_map = {"notificationRuleList":[],"bpnRuleList":[{"optInType":"single","optInRule":"all","notificationId":"MTM3MjQ1ZTlmMTJkOTU0MmY1N2E1MDQ2Y2I0NWJiZGIzMTNmNzg=","whereTo":{"pageRuleCode":{"targetRule":"all","rules":[]}},"whenTo":[],"isVapidEnabled":0}],"config":{"enableNotification":true,"enableBpn":true},"passKey":"{}"};
